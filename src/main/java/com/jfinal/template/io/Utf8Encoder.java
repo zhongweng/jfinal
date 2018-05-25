@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2011-2019, James Zhan 詹波 (jfinal@126.com).
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,19 +20,19 @@ import java.nio.charset.MalformedInputException;
 
 /**
  * Utf8Encoder
- * 
+ *
  * http://grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/8u40-b25/sun/nio/cs/UTF_8.java?av=f
  * http://grepcode.com/search?query=ArrayEncoder&start=0&entity=type&n=
  */
 public class Utf8Encoder extends Encoder {
-	
-	public static final Utf8Encoder me = new Utf8Encoder();
-	
-	public float maxBytesPerChar() {
-		return 3.0F;
-	}
-	
-	public int encode(char[] chars, int offset, int len, byte[] bytes) {
+
+    public static final Utf8Encoder me = new Utf8Encoder();
+
+    public float maxBytesPerChar() {
+        return 3.0F;
+    }
+
+    public int encode(char[] chars, int offset, int len, byte[] bytes) {
         int sl = offset + len;
         int dp = 0;
         int dlASCII = dp + Math.min(len, bytes.length);
@@ -72,7 +72,7 @@ public class Utf8Encoder extends Encoder {
                         uc = c;
                     }
                 }
-                
+
                 if (uc < 0) {
                     bytes[dp++] = (byte) '?';
                 } else {

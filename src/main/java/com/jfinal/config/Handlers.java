@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2011-2019, James Zhan 詹波 (jfinal@126.com).
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,6 +18,7 @@ package com.jfinal.config;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.jfinal.core.ActionHandler;
 import com.jfinal.handler.Handler;
 
@@ -25,28 +26,28 @@ import com.jfinal.handler.Handler;
  * Handlers.
  */
 final public class Handlers {
-	
-	private ActionHandler actionHandler = null;
-	private final List<Handler> handlerList = new ArrayList<Handler>();
-	
-	public Handlers add(Handler handler) {
-		if (handler == null) {
-			throw new IllegalArgumentException("handler can not be null");
-		}
-		handlerList.add(handler);
-		return this;
-	}
-	
-	public Handlers setActionHandler(ActionHandler actionHandler) {
-		this.actionHandler = actionHandler;
-		return this;
-	}
-	
-	public List<Handler> getHandlerList() {
-		return handlerList;
-	}
-	
-	public ActionHandler getActionHandler() {
-		return actionHandler;
-	}
+
+    private ActionHandler actionHandler = null;
+    private final List<Handler> handlerList = new ArrayList<Handler>();
+
+    public Handlers add(Handler handler) {
+        if (handler == null) {
+            throw new IllegalArgumentException("handler can not be null");
+        }
+        handlerList.add(handler);
+        return this;
+    }
+
+    public Handlers setActionHandler(ActionHandler actionHandler) {
+        this.actionHandler = actionHandler;
+        return this;
+    }
+
+    public List<Handler> getHandlerList() {
+        return handlerList;
+    }
+
+    public ActionHandler getActionHandler() {
+        return actionHandler;
+    }
 }

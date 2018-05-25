@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2011-2019, James Zhan 詹波 (jfinal@126.com).
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,6 +17,7 @@
 package com.jfinal.template.stat.ast;
 
 import java.io.IOException;
+
 import com.jfinal.template.Env;
 import com.jfinal.template.TemplateException;
 import com.jfinal.template.expr.ast.ExprList;
@@ -28,37 +29,37 @@ import com.jfinal.template.stat.Scope;
  * Stat
  */
 public abstract class Stat {
-	
-	protected Location location;
-	
-	public Stat setLocation(Location location) {
-		this.location = location;
-		return this;
-	}
-	
-	public Location getLocation() {
-		return location;
-	}
-	
-	public void setExprList(ExprList exprList) {
-	}
-	
-	public void setStat(Stat stat) {
-	}
-	
-	public abstract void exec(Env env, Scope scope, Writer writer);
-	
-	public boolean hasEnd() {
-		return false;
-	}
-	
-	protected void write(Writer writer, String str) {
-		try {
-			writer.write(str, 0, str.length());
-		} catch (IOException e) {
-			throw new TemplateException(e.getMessage(), location, e);
-		}
-	}
+
+    protected Location location;
+
+    public Stat setLocation(Location location) {
+        this.location = location;
+        return this;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setExprList(ExprList exprList) {
+    }
+
+    public void setStat(Stat stat) {
+    }
+
+    public abstract void exec(Env env, Scope scope, Writer writer);
+
+    public boolean hasEnd() {
+        return false;
+    }
+
+    protected void write(Writer writer, String str) {
+        try {
+            writer.write(str, 0, str.length());
+        } catch (IOException e) {
+            throw new TemplateException(e.getMessage(), location, e);
+        }
+    }
 }
 
 
